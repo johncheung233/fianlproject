@@ -6,3 +6,8 @@
 .\objects\main.o: D:\ARM\ARM\PACK\ARM\CMSIS\5.0.0-Beta12\CMSIS\Include\cmsis_armcc.h
 .\objects\main.o: D:\ARM\ARM\PACK\Keil\LPC1100_DFP\1.4.0\Device\Include\LPC11xx\system_LPC11xx.h
 .\objects\main.o: ..\src\ADC.h
+.\objects\main.o: ..\src\BREAK.h
+.\objects\main.o: ..\src\lcd.h
+.\objects\main.o: ..\src\UART.h
+.\objects\main.o: D:\ARM\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\main.o: D:\ARM\ARM\ARMCC\Bin\..\include\string.h

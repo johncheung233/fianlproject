@@ -412,6 +412,11 @@
               <FileType>1</FileType>
               <FilePath>..\src\UART.c</FilePath>
             </File>
+            <File>
+              <FileName>lcd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\lcd.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

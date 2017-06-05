@@ -1,6 +1,9 @@
 --cpu Cortex-M0
 ".\objects\main.o"
 ".\objects\adc.o"
+".\objects\break.o"
+".\objects\uart.o"
+".\objects\lcd.o"
 ".\objects\startup_lpc11xx.o"
 ".\objects\system_lpc11xx.o"
 --strict --scatter ".\Objects\final.sct"

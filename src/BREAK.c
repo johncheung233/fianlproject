@@ -1,6 +1,8 @@
 #include "LPC11xx.h"                    // Device header
-uint8_t SETTEMP;
+#include <stdio.h>
 
+uint8_t SETTEMP=29;
+char LEDBuffer[20];
 void SEGinit()
 
 {
@@ -11,37 +13,40 @@ void KEYinit()
 
 {
 
-	LPC_GPIO3->DIR &=~(1<<0);
-	LPC_GPIO3->DIR &=~(1<<1);
+	LPC_GPIO3->DIR &=~(1<<2);
+	LPC_GPIO3->DIR &=~(1<<3);
 
 }
 
 void BreakInit()
 
 {
-  LPC_GPIO3->IE|=(1<<0);
+  LPC_GPIO3->IE|=(1<<2);
 
-	LPC_GPIO3->IS&=~(1<<0);
+	LPC_GPIO3->IS&=~(1<<2);
 
-	LPC_GPIO3->IEV&=~(1<<0);
+	LPC_GPIO3->IEV&=~(1<<2);
 	
-	LPC_GPIO3->IE|=(1<<1);
+	LPC_GPIO3->IE|=(1<<3);
 
-	LPC_GPIO3->IS&=~(1<<1);
+	LPC_GPIO3->IS&=~(1<<3);
 
-	LPC_GPIO3->IEV&=~(1<<1);
+	LPC_GPIO3->IEV&=~(1<<3);
 }
 
-void PIOINT3_IRQHandler(void)
+ void PIOINT3_IRQHandler(void)
 {
-	if((LPC_GPIO3->MIS &(1<<0))==(1<<0))
+ 
+	if((LPC_GPIO3->MIS &(1<<2))==(1<<2))
 	{
-		SETTEMP=SETTEMP+1;
-		LPC_GPIO3->IC |=(1<<0);
+		SETTEMP++;
+		LPC_GPIO3->IC |=(1<<2);
 	}
-	if((LPC_GPIO3->MIS &(1<<0))==(1<<0))
+	if((LPC_GPIO3->MIS &(1<<3))==(1<<3))
 	{
-		SETTEMP=SETTEMP-1;
-		LPC_GPIO3->IC |=(1<<1);
+		SETTEMP--;
+		LPC_GPIO3->IC |=(1<<3);
 	}
+	sprintf ( LEDBuffer,"SET=%d 'C",SETTEMP);
 }
+
