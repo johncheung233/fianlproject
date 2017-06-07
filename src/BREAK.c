@@ -47,6 +47,6 @@ void BreakInit()
 		SETTEMP--;
 		LPC_GPIO3->IC |=(1<<3);
 	}
-	sprintf ( LEDBuffer,"SET=%d 'C",SETTEMP);
+	sprintf ( LEDBuffer,"SET=%d",SETTEMP);
 }
 

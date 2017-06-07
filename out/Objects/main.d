@@ -9,5 +9,6 @@
 .\objects\main.o: ..\src\BREAK.h
 .\objects\main.o: ..\src\lcd.h
 .\objects\main.o: ..\src\UART.h
+.\objects\main.o: ..\src\measure.h
 .\objects\main.o: D:\ARM\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\main.o: D:\ARM\ARM\ARMCC\Bin\..\include\string.h

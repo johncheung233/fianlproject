@@ -1,7 +1,8 @@
 #include "LPC11xx.h"                    // Device header
 #include "string.h"
+#include "stdio.h"
 #define LCD_DATAPORT	LPC_GPIO2->DATA
-
+char first[20];
 
 static volatile unsigned int ticks = 0;
 /********************************************************************************
@@ -170,3 +171,4 @@ void InitLCD()
 	LCD_WriteCommand(0x0c);	//???,????,?????
 	Delayms(1);	
 }
+
